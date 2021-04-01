@@ -1,0 +1,16 @@
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\bin\Debug\net5.0\Circustrein.exe
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\bin\Debug\net5.0\Circustrein.deps.json
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\bin\Debug\net5.0\Circustrein.runtimeconfig.json
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\bin\Debug\net5.0\Circustrein.runtimeconfig.dev.json
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\bin\Debug\net5.0\Circustrein.dll
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\bin\Debug\net5.0\ref\Circustrein.dll
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\bin\Debug\net5.0\Circustrein.pdb
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\obj\Debug\net5.0\Circustrein.csprojAssemblyReference.cache
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\obj\Debug\net5.0\Circustrein.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\obj\Debug\net5.0\Circustrein.AssemblyInfoInputs.cache
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\obj\Debug\net5.0\Circustrein.AssemblyInfo.cs
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\obj\Debug\net5.0\Circustrein.csproj.CoreCompileInputs.cache
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\obj\Debug\net5.0\Circustrein.dll
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\obj\Debug\net5.0\ref\Circustrein.dll
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\obj\Debug\net5.0\Circustrein.pdb
+C:\Users\Sjoerd\Documents\S2 Software New\Individueel\Algoritmiek\Circustrein\obj\Debug\net5.0\Circustrein.genruntimeconfig.cache
