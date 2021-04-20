@@ -24,7 +24,7 @@ namespace Circustrein
             {
                 foreach (Wagon wagon in wagons)
                 {
-                    if (wagon.AddAnimalToWagon(animal))
+                    if (wagon.CanAnimalBeAddedToWagon(animal))
                     {
                         break;
                     }
@@ -32,7 +32,7 @@ namespace Circustrein
                     else if (wagons.IndexOf(wagon) == wagons.Count - 1)
                     {
                         Wagon newWagon = new Wagon();
-                        newWagon.AddAnimalToWagon(animal);
+                        newWagon.CanAnimalBeAddedToWagon(animal);
                         wagons.Add(newWagon);
                         break;
                     }
@@ -40,6 +40,17 @@ namespace Circustrein
             }
             return false;
         }
+
+        public void AreAnimalsDistributedTheBestWay(Animal animal)
+        {
+            foreach (var wagon in wagons)
+            {
+                wagon.CurrentCapacity += wagon.CurrentCapacity;
+            }
+           
+        }
+
+
 
         public override string ToString()
         {

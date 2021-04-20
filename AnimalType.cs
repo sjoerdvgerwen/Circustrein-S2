@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Circustrein
 {
-    public enum AnimalType
+    public enum AnimalType 
     {
-       Carnivore = 1,
-       Herbivore = 2
+        Carnivore,
+        Herbivore
     }
 }

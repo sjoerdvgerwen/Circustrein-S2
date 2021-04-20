@@ -21,7 +21,7 @@ namespace Circustrein
 
         }
 
-        public bool IsWagonFull(Animal animal)
+        public bool DoesAnimalFitInWagon(Animal animal)
         {
             if ((int)animal.Size + CurrentCapacity <= MaxCapacity)
             {
@@ -43,6 +43,8 @@ namespace Circustrein
             return true;
         }
 
+
+
         public bool IsAnimalACarnivore(Animal animal)
         {
             foreach (Animal animalInWagon in animalsInWagon)
@@ -58,9 +60,9 @@ namespace Circustrein
 
 
 
-        public bool AddAnimalToWagon(Animal animal)
+        public bool CanAnimalBeAddedToWagon(Animal animal)
         {
-            if (IsAnimalACarnivore(animal) == true && IsWagonFull(animal) == true && IsLargeCarnivorePresent(animal) == true)
+            if (IsAnimalACarnivore(animal) == true && DoesAnimalFitInWagon(animal) == true && IsLargeCarnivorePresent(animal) == true)
             {
                 animalsInWagon.Add(animal);
                 CurrentCapacity += (int)animal.Size;
@@ -70,8 +72,10 @@ namespace Circustrein
             return false;
         }
 
+        
 
-        public override string ToString()
+
+        public override string ToString() 
         {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("             o              ");
@@ -85,7 +89,6 @@ namespace Circustrein
             builder.AppendLine("       ======o======        ");
 
             return builder.ToString();
-
         }
     }
 }
