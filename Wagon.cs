@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Circustrein
 {
@@ -44,7 +41,6 @@ namespace Circustrein
         }
 
 
-
         public bool IsAnimalACarnivore(Animal animal)
         {
             foreach (Animal animalInWagon in animalsInWagon)
@@ -59,7 +55,6 @@ namespace Circustrein
         }
 
 
-
         public bool CanAnimalBeAddedToWagon(Animal animal)
         {
             if (IsAnimalACarnivore(animal) == true && DoesAnimalFitInWagon(animal) == true && IsLargeCarnivorePresent(animal) == true)
@@ -72,10 +67,8 @@ namespace Circustrein
             return false;
         }
 
-        
 
-
-        public override string ToString() 
+        public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("             o              ");

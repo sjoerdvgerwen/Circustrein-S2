@@ -14,6 +14,8 @@ namespace Circustrein
 
         public List<Animal> Animals { get; set; }
 
+        public List<Animal> SortedAnimals { get; set; }
+
         public Animal(AnimalSize size, AnimalType type)
         {
 
@@ -21,25 +23,37 @@ namespace Circustrein
             Type = type;
         }
 
-        public Animal(List<Animal> UnsortedAnimals)
+        public Animal()
         {
-            var sortedAnimals = UnsortedAnimals
-                .OrderBy(animals => animals.Size == AnimalSize.Small)
-                .ThenBy(animals => animals.Size == AnimalSize.Large)
-                .ThenBy(animals => animals.Size == AnimalSize.Medium);
 
-
-            Animals = sortedAnimals.ToList();
         }
 
-        public void SortByTypeAndSize(IEnumerable<Animal> animalCollection)
+        public List<Animal> SortAnimals(IEnumerable<Animal> UnsortedAnimals)
         {
-            IEnumerable<Animal> carnivores = (List<Animal>)animalCollection
-                .Where(animal => animal.Type == AnimalType.Carnivore);
-            IEnumerable<Animal> herbivores = animalCollection
-                .Where(animal => animal.Type == AnimalType.Herbivore)
-                .OrderBy(animal => animal.Size)
-                .ToList();
+            var carnivores = UnsortedAnimals
+                .OrderBy(animal => animal.Type == AnimalType.Carnivore)
+                .ThenByDescending(animal => animal.Size);
+
+            var mediumherbivores = UnsortedAnimals
+                .OrderBy(animal => animal.Type == AnimalType.Herbivore)
+                .ThenByDescending(animal => animal.Size == AnimalSize.Medium);
+
+            var smallherbivores = UnsortedAnimals
+                .OrderBy(animal => animal.Type == AnimalType.Herbivore)
+                .ThenByDescending(animal => animal.Size == AnimalSize.Small);
+
+            var largeherbivores = UnsortedAnimals
+                .OrderBy(animal => animal.Type == AnimalType.Herbivore)
+                .ThenByDescending(animal => animal.Size == AnimalSize.Large);
+
+
+            SortedAnimals = carnivores.ToList();
+            SortedAnimals = largeherbivores.ToList();
+            SortedAnimals = smallherbivores.ToList();
+            SortedAnimals = mediumherbivores.ToList();
+            
+            return SortedAnimals;
+
         }
     }
 }

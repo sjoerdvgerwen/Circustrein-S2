@@ -1,6 +1,3 @@
-using System;
-
-
 namespace Circustrein
 {
     public class Carnivore : Animal
@@ -10,9 +7,9 @@ namespace Circustrein
         public Carnivore(AnimalSize size) : base(size, AnimalType.Carnivore)
         {
             Size = size;
-            
+
         }
 
-        
+
     }
 }

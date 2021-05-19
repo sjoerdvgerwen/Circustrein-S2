@@ -9,6 +9,10 @@ namespace Circustrein
     {
         static void Main(string[] args)
         {
+            Train train = new Train();
+
+            Animal animal = new Animal();
+
             List<Animal> animals = new List<Animal>();
             animals.Add(new Herbivore(AnimalSize.Small));
             animals.Add(new Herbivore(AnimalSize.Small));
@@ -19,13 +23,11 @@ namespace Circustrein
             animals.Add(new Herbivore(AnimalSize.Medium));
             animals.Add(new Herbivore(AnimalSize.Medium));
             animals.Add(new Herbivore(AnimalSize.Medium));
-            
 
-            Animal animal = new Animal(animals);
-            var sortedAnimals = animal.Animals;
+            animal.SortAnimals(animals);
 
-            Train train = new Train();
-            train.AddAnimalToWagon(sortedAnimals);
+            train.AddAnimalToWagon(animal.SortedAnimals);
+
             Console.WriteLine(train);
         }
     }
