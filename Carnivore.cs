@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace Circustrein
 {
-    public class Animal
+    public class Carnivore : Animal
     {
         public AnimalSize Size { get; set; }
-
-        public AnimalType Type { get; set; }
-
-        public Animal(AnimalSize size, AnimalType type)
-        {  
+        public Carnivore(AnimalSize size) : base(size, AnimalType.Carnivore)
+        {
             Size = size;
-            Type = type;
         }
     }
 }

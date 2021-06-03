@@ -4,23 +4,26 @@ using System.Collections.Generic;
 namespace Circustrein
 {
     class Program
-    {
+    { 
         static void Main(string[] args)
         {
             List<Animal> animals = new List<Animal>();
-            animals.Add(new Animal((AnimalSize)1, (AnimalType)1));
-            animals.Add(new Animal((AnimalSize)3, (AnimalType)2));
-            animals.Add(new Animal((AnimalSize)5, (AnimalType)1));
-            animals.Add(new Animal((AnimalSize)3, (AnimalType)1));
-            animals.Add(new Animal((AnimalSize)3, (AnimalType)2));
-            animals.Add(new Animal((AnimalSize)1, (AnimalType)2));
-            animals.Add(new Animal((AnimalSize)3, (AnimalType)2));
-            animals.Add(new Animal((AnimalSize)5, (AnimalType)2));
+
+                animals.Add(new Herbivore(AnimalSize.Large));
+                animals.Add(new Herbivore(AnimalSize.Medium));
+                animals.Add(new Herbivore(AnimalSize.Small));
+                animals.Add(new Herbivore(AnimalSize.Small));
+                animals.Add(new Herbivore(AnimalSize.Large));
+                animals.Add(new Carnivore(AnimalSize.Small));
+                animals.Add(new Carnivore(AnimalSize.Medium));
+                animals.Add(new Carnivore(AnimalSize.Medium));
+                animals.Add(new Carnivore(AnimalSize.Medium));
+                animals.Add(new Carnivore(AnimalSize.Large));
+                animals.Add(new Carnivore(AnimalSize.Large));
 
             Train train = new Train();
-            train.AddAnimalToWagon(animals);
+            train.SortAnimals(animals);
             Console.WriteLine(train);
-
         }
     }
 }
