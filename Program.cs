@@ -7,6 +7,8 @@ namespace Circustrein
     { 
         static void Main(string[] args)
         {
+            Train train = new Train();
+
             List<Animal> animals = new List<Animal>();
 
                 animals.Add(new Herbivore(AnimalSize.Large));
@@ -21,8 +23,8 @@ namespace Circustrein
                 animals.Add(new Carnivore(AnimalSize.Large));
                 animals.Add(new Carnivore(AnimalSize.Large));
 
-            Train train = new Train();
             train.SortAnimals(animals);
+
             Console.WriteLine(train);
         }
     }

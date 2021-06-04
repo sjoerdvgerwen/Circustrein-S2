@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Circustrein
 {
@@ -18,7 +15,9 @@ namespace Circustrein
             MaxCapacity = 10;
         }
 
+
         private bool DoesAnimalFit(Animal animal)
+
         {
             if ((int)animal.Size + CurrentCapacity <= MaxCapacity)
             {
@@ -39,7 +38,9 @@ namespace Circustrein
             return true;
         }
 
+
         private bool SafeToAddAnimal(Animal animal)
+
         {
             foreach (Animal animalInWagon in animalsInWagon)
             {
