@@ -73,7 +73,6 @@ namespace Circustrein
                 else
                 {
                     AddToNewWagon(animal);
-
                 }
             }
         }
@@ -84,7 +83,6 @@ namespace Circustrein
             wagon.TryAddAnimal(animal);
             Wagons.Add(wagon);
         }
-
 
         public override string ToString()
         {

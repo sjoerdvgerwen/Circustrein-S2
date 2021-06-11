@@ -15,7 +15,6 @@ namespace Circustrein
             MaxCapacity = 10;
         }
 
-
         private bool DoesAnimalFit(Animal animal)
 
         {
@@ -40,7 +39,6 @@ namespace Circustrein
 
 
         private bool SafeToAddAnimal(Animal animal)
-
         {
             foreach (Animal animalInWagon in animalsInWagon)
             {
@@ -71,8 +69,6 @@ namespace Circustrein
             foreach (Animal animal in animalsInWagon)
             {
                 builder.AppendLine("       " + animal.Size + " " + animal.Type.ToString());
-
-
             }
             builder.AppendLine("       ======o======        ");
             return builder.ToString();
