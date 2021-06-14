@@ -1,129 +1,209 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿//using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using System.Collections.Generic;
+//using System.Linq;
 
-namespace Circustrein.Unittests
-{
-    [TestClass]
-    public class TrainTest
-    {
-        [TestMethod]
-        public void Adds_Herbivore_In_New_Wagon_When_Other_Wagon_Is_Full()
-        {
-            Train train = new Train();
+//namespace Circustrein.Unittests
+//{
+//    [TestClass]
 
-            List<Animal> animals = new List<Animal>();
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
+//    public class TrainTest
+//    {
+//        [TestMethod]
+//        public void INTEGRATION_TEST_ONE() 
+//            //naam wijzigen
+//            //OO methodes verdelen per klasse
+//            //
+//        {
+            
+//            Train train = new Train();
+//            List<Animal> herbivores = new List<Animal>();
+//            herbivores.Add(new Herbivore(AnimalSize.Small));
+//            herbivores.Add(new Herbivore(AnimalSize.Small));
+//            herbivores.Add(new Herbivore(AnimalSize.Small));
+//            herbivores.Add(new Herbivore(AnimalSize.Small));
+//            herbivores.Add(new Herbivore(AnimalSize.Small));
+//            herbivores.Add(new Herbivore(AnimalSize.Medium));
+//            herbivores.Add(new Herbivore(AnimalSize.Medium));
+//            herbivores.Add(new Herbivore(AnimalSize.Medium));
+//            herbivores.Add(new Herbivore(AnimalSize.Large));
+            
 
-            train.TryAddAnimalsToWagons(animals);
 
-            Assert.AreEqual(2, train.Wagons.Count);
-        }
+//            Animal animal = new Animal();
 
-        [TestMethod]
-        public void Adds_Carnivore_In_New_Wagon_When_Other_Wagon_Is_Full()
-        {
-            Train train = new Train();
+//            animal.SortAnimals(herbivores);
 
-            List<Animal> animals = new List<Animal>();
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
+//            train.AddAnimalToWagon(animal.SortAnimals(herbivores));
 
-            train.TryAddAnimalsToWagons(animals);
+//            Assert.AreEqual(2, train.wagons.Count);
+//        }
 
-            Assert.AreEqual(4, train.Wagons.Count);
-        }
+//        [TestMethod]
 
-        [TestMethod]
-        public void Big_Carnivore_Will_Not_Go_In_Same_Wagon_As_Smaller_Carnivore()
-        {
-            Train train = new();
+//        public void INTEGRATION_TEST_TWO()
+//        {
+//            List<Animal> animals = new List<Animal>();
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Carnivore(AnimalSize.Small));
+//            animals.Add(new Carnivore(AnimalSize.Medium));
+//            animals.Add(new Carnivore(AnimalSize.Medium));
+//            animals.Add(new Carnivore(AnimalSize.Medium));
+//            animals.Add(new Carnivore(AnimalSize.Large));
+//            animals.Add(new Carnivore(AnimalSize.Large));
 
-            List<Animal> animals = new List<Animal>();
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Small, AnimalType.Carnivore));
+//            Train train = new Train();
 
-            train.TryAddAnimalsToWagons(animals);
+//            Animal animal = new Animal();
 
-            Assert.AreEqual(2, train.Wagons.Count);
-        }
+//            animal.SortAnimals(animals);
 
-        [TestMethod]
-        public void Big_Herbivore_Will_Not_Go_In_Same_Wagon_As_Big_Carnivore()
-        {
-            Train train = new();
+//            train.AddAnimalToWagon(animal.SortedAnimals);
 
-            List<Animal> animals = new List<Animal>();
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
+//            Assert.AreEqual(6, train.wagons.Count);
+//        }
 
-            train.TryAddAnimalsToWagons(animals);
+//        [TestMethod]
+//        public void INTEGRATION_TEST_THREE()
+//        {
 
-            Assert.AreEqual(2, train.Wagons.Count);
-        }
+//            List<Animal> animals = new List<Animal>();
 
-        [TestMethod]
-        public void Wagon_Is_Build_With_Max_10_Capacity()
-        {
-            Wagon wagon = new Wagon();
+//            animals.Add(new Herbivore(AnimalSize.Small));
+//            animals.Add(new Herbivore(AnimalSize.Small));
+//            animals.Add(new Herbivore(AnimalSize.Small));
+//            animals.Add(new Herbivore(AnimalSize.Small));
+//            animals.Add(new Herbivore(AnimalSize.Small));
 
-            Assert.IsNotNull(wagon);
-            Assert.AreEqual(10, wagon.MaxCapacity);
-        }
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
 
-        [TestMethod]
-        public void Cant_Add_Large_Carnivore_With_Large_Herbivore()
-        {
-            Wagon wagon = new Wagon();
-            Animal Carnivore = new Animal(AnimalSize.Large, AnimalType.Carnivore);
-            Animal Herbivore = new Animal(AnimalSize.Large, AnimalType.Herbivore);
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
 
-            wagon.TryAddAnimal(Carnivore);
+//            animals.Add(new Carnivore(AnimalSize.Small));
+//            animals.Add(new Carnivore(AnimalSize.Small));
 
-            Assert.IsFalse(wagon.TryAddAnimal(Herbivore));
-        }
+//            animals.Add(new Carnivore(AnimalSize.Medium));
+//            animals.Add(new Carnivore(AnimalSize.Medium));
 
-        [TestMethod]
-        public void Cant_Add_Small_Carnivore_With_Large_Carnivore()
-        {
-            Wagon wagon = new Wagon();
-            Animal CarnivoreBig = new Animal(AnimalSize.Large, AnimalType.Carnivore);
-            Animal CarnivoreSmall = new Animal(AnimalSize.Small, AnimalType.Carnivore);
+//            animals.Add(new Carnivore(AnimalSize.Large));
+//            animals.Add(new Carnivore(AnimalSize.Large));
 
-            wagon.TryAddAnimal(CarnivoreBig);
 
-            Assert.IsFalse(wagon.TryAddAnimal(CarnivoreSmall));
-        }
+//            Train train = new Train();
 
-        [TestMethod]
-        public void Cant_Add_Animal_If_Capacity_Is_Higher_Then_10()
-        {
-            Wagon wagon = new Wagon();
-            Animal a1 = new Animal(AnimalSize.Large, AnimalType.Herbivore);
-            Animal a2 = new Animal(AnimalSize.Large, AnimalType.Herbivore);
-            Animal a3 = new Animal(AnimalSize.Large, AnimalType.Herbivore);
+//            Animal animal = new Animal();
 
-            wagon.TryAddAnimal(a1);
-            wagon.TryAddAnimal(a2);
+//            animal.SortAnimals(animals);
 
-            Assert.IsFalse(wagon.TryAddAnimal(a3));
-        }
+//            train.AddAnimalToWagon(animal.SortedAnimals);
 
-        [TestMethod]
-        public void Does_The_Current_Capacity_Change_When_Animal_Is_Added()
-        {
-            Wagon wagon = new Wagon();
-            Animal a1 = new Animal(AnimalSize.Medium, AnimalType.Carnivore);
-            Animal a2 = new Animal(AnimalSize.Large, AnimalType.Herbivore);
+//            Assert.AreEqual(8, train.wagons.Count);
+//        }
 
-            wagon.TryAddAnimal(a1);
-            wagon.TryAddAnimal(a2);
 
-            Assert.AreEqual(8, wagon.CurrentCapacity);
-        }
-    }
-}
+//        [TestMethod]
+//        public void INTEGRATION_TEST_FOUR()
+//        {
+//            List<Animal> animals = new List<Animal>();
+
+//            animals.Add(new Herbivore(AnimalSize.Small));
+//            animals.Add(new Herbivore(AnimalSize.Small));
+//            animals.Add(new Herbivore(AnimalSize.Small));
+//            animals.Add(new Herbivore(AnimalSize.Small));
+//            animals.Add(new Herbivore(AnimalSize.Small));
+
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+
+//            animals.Add(new Carnivore(AnimalSize.Small));
+//            animals.Add(new Carnivore(AnimalSize.Small));
+
+//            animals.Add(new Carnivore(AnimalSize.Medium));
+//            animals.Add(new Carnivore(AnimalSize.Medium));
+
+//            animals.Add(new Carnivore(AnimalSize.Large));
+//            animals.Add(new Carnivore(AnimalSize.Large));
+
+//            Train train = new Train();
+            
+//            Animal animal = new Animal();
+
+//            animal.SortAnimals(animals);
+
+//            train.AddAnimalToWagon(animal.SortedAnimals);
+
+//            Assert.AreEqual(8, train.wagons.Count);
+//        }
+
+//        [TestMethod]
+//        public void INTEGRATION_TEST_FIVE()
+//        {
+//            List<Animal> animals = new List<Animal>();
+
+//            animals.Add(new Herbivore(AnimalSize.Small));
+
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+
+
+//            Train train = new Train();
+
+//            Animal animal = new Animal();
+
+//            animal.SortAnimals(animals);
+
+//            train.AddAnimalToWagon(animal.SortedAnimals);
+
+//            Assert.AreEqual(2, train.wagons.Count);
+//        }
+
+//        [TestMethod]
+//        public void INTEGRATION_TEST_SIX()
+//        {
+//            List<Animal> animals = new List<Animal>();
+
+
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+//            animals.Add(new Herbivore(AnimalSize.Medium));
+            
+
+//            animals.Add(new Herbivore(AnimalSize.Large));
+//            animals.Add(new Herbivore(AnimalSize.Large));
+            
+//            animals.Add(new Carnivore(AnimalSize.Small));
+            
+//            Train train = new Train();
+
+//            Animal animal = new Animal();
+
+//            animal.SortAnimals(animals);
+
+//            train.AddAnimalToWagon(animal.SortedAnimals);
+
+//            Assert.AreEqual(2, train.wagons.Count);
+//        }
+//    }
+//}
