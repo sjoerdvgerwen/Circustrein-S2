@@ -1,8 +1,8 @@
-﻿namespace Circustrein
-{
-    public enum AnimalType
-    {
-        Carnivore,
-        Herbivore
-    }
-}
+﻿//namespace Circustrein
+//{
+//    public enum AnimalType
+//    {
+//        Carnivore,
+//        Herbivore
+//    }
+//}

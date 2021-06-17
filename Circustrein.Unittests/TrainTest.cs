@@ -12,10 +12,10 @@ namespace Circustrein.Unittests
             Train train = new Train();
 
             List<Animal> animals = new List<Animal>();
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
+            animals.Add(new Herbivore(AnimalSize.Large));
+            animals.Add(new Herbivore(AnimalSize.Large));
+            animals.Add(new Herbivore(AnimalSize.Large));
+            animals.Add(new Herbivore(AnimalSize.Large));
 
             train.TryAddAnimalsToWagons(animals);
 
@@ -28,10 +28,10 @@ namespace Circustrein.Unittests
             Train train = new Train();
 
             List<Animal> animals = new List<Animal>();
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
+            animals.Add(new Carnivore(AnimalSize.Large));
+            animals.Add(new Carnivore(AnimalSize.Large));
+            animals.Add(new Carnivore(AnimalSize.Large));
+            animals.Add(new Carnivore(AnimalSize.Large));
 
             train.TryAddAnimalsToWagons(animals);
 
@@ -44,8 +44,8 @@ namespace Circustrein.Unittests
             Train train = new();
 
             List<Animal> animals = new List<Animal>();
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Small, AnimalType.Carnivore));
+            animals.Add(new Carnivore(AnimalSize.Large));
+            animals.Add(new Carnivore(AnimalSize.Small));
 
             train.TryAddAnimalsToWagons(animals);
 
@@ -58,8 +58,8 @@ namespace Circustrein.Unittests
             Train train = new();
 
             List<Animal> animals = new List<Animal>();
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Carnivore));
-            animals.Add(new Animal(AnimalSize.Large, AnimalType.Herbivore));
+            animals.Add(new Carnivore(AnimalSize.Large));
+            animals.Add(new Carnivore(AnimalSize.Large));
 
             train.TryAddAnimalsToWagons(animals);
 
@@ -79,8 +79,8 @@ namespace Circustrein.Unittests
         public void Cant_Add_Large_Carnivore_With_Large_Herbivore()
         {
             Wagon wagon = new Wagon();
-            Animal Carnivore = new Animal(AnimalSize.Large, AnimalType.Carnivore);
-            Animal Herbivore = new Animal(AnimalSize.Large, AnimalType.Herbivore);
+            Animal Carnivore = new Carnivore(AnimalSize.Large);
+            Animal Herbivore = new Carnivore(AnimalSize.Large);
 
             wagon.TryAddAnimal(Carnivore);
 
@@ -91,8 +91,8 @@ namespace Circustrein.Unittests
         public void Cant_Add_Small_Carnivore_With_Large_Carnivore()
         {
             Wagon wagon = new Wagon();
-            Animal CarnivoreBig = new Animal(AnimalSize.Large, AnimalType.Carnivore);
-            Animal CarnivoreSmall = new Animal(AnimalSize.Small, AnimalType.Carnivore);
+            Animal CarnivoreBig = new Carnivore(AnimalSize.Large);
+            Animal CarnivoreSmall = new Carnivore(AnimalSize.Small);
 
             wagon.TryAddAnimal(CarnivoreBig);
 
@@ -103,9 +103,9 @@ namespace Circustrein.Unittests
         public void Cant_Add_Animal_If_Capacity_Is_Higher_Then_10()
         {
             Wagon wagon = new Wagon();
-            Animal a1 = new Animal(AnimalSize.Large, AnimalType.Herbivore);
-            Animal a2 = new Animal(AnimalSize.Large, AnimalType.Herbivore);
-            Animal a3 = new Animal(AnimalSize.Large, AnimalType.Herbivore);
+            Animal a1 = new Herbivore(AnimalSize.Large);
+            Animal a2 = new Herbivore(AnimalSize.Large);
+            Animal a3 = new Herbivore(AnimalSize.Large);
 
             wagon.TryAddAnimal(a1);
             wagon.TryAddAnimal(a2);
@@ -117,8 +117,8 @@ namespace Circustrein.Unittests
         public void Does_The_Current_Capacity_Change_When_Animal_Is_Added()
         {
             Wagon wagon = new Wagon();
-            Animal a1 = new Animal(AnimalSize.Medium, AnimalType.Carnivore);
-            Animal a2 = new Animal(AnimalSize.Large, AnimalType.Herbivore);
+            Animal a1 = new Carnivore(AnimalSize.Medium);
+            Animal a2 = new Herbivore(AnimalSize.Large);
 
             wagon.TryAddAnimal(a1);
             wagon.TryAddAnimal(a2);

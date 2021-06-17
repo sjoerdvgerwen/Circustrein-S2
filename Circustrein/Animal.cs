@@ -9,14 +9,9 @@ namespace Circustrein
     public class Animal
     {
         public AnimalSize Size { get; set; }
-        public AnimalType Type { get; set; }
-
-        public Animal(AnimalSize size, AnimalType type)
-
+        public Animal(AnimalSize size)
         {
             Size = size;
-            Type = type;
-        }
-
+        }        
     }
 }

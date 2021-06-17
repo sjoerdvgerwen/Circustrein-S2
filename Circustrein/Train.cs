@@ -37,7 +37,7 @@ namespace Circustrein
         private List<Animal> SortCarnivores()
         {
             return Animals
-                 .Where(animal => animal.Type == AnimalType.Carnivore)
+                 .Where(animal => animal is Carnivore)
                  .OrderBy(animal => animal.Size)
                  .ToList();
         }
@@ -45,7 +45,7 @@ namespace Circustrein
         private List<Animal> SortSmallHerbivores()
         {
             return Animals
-                .Where(animal => animal.Type == AnimalType.Herbivore && animal.Size == AnimalSize.Small)
+                .Where(animal => animal is Herbivore && animal.Size == AnimalSize.Small)
                 .OrderByDescending(animal => animal.Size)
                 .ToList();
         }
@@ -53,14 +53,14 @@ namespace Circustrein
         private List<Animal> SortMediumHerbivores()
         {
             return Animals
-                .Where(animal => animal.Type == AnimalType.Herbivore && animal.Size == AnimalSize.Medium)
+                .Where(animal => animal is Herbivore && animal.Size == AnimalSize.Medium)
                 .ToList();
         }
 
         private List<Animal> SortLargeHerbivores()
         {
             return Animals
-                .Where(animal => animal.Type == AnimalType.Herbivore && animal.Size == AnimalSize.Large)
+                .Where(animal => animal is Herbivore && animal.Size == AnimalSize.Large)
                 .ToList();
         }
 
@@ -69,12 +69,7 @@ namespace Circustrein
             foreach (Animal animal in animalList)
             {
                 if (Wagons.Any(wagon => wagon.TryAddAnimal(animal))) { }
-
-                else
-                {
-                    AddToNewWagon(animal);
-
-                }
+                else{AddToNewWagon(animal);}
             }
         }
 

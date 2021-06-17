@@ -15,9 +15,7 @@ namespace Circustrein
             MaxCapacity = 10;
         }
 
-
         private bool DoesAnimalFit(Animal animal)
-
         {
             if ((int)animal.Size + CurrentCapacity <= MaxCapacity)
             {
@@ -30,7 +28,7 @@ namespace Circustrein
         {
             foreach (Animal animalInWagon in animalsInWagon)
             {
-                if (animalInWagon.Type == AnimalType.Carnivore && animal.Type == AnimalType.Carnivore)
+                if (animalInWagon is Carnivore && animal is Carnivore)
                 {
                     return false;
                 }
@@ -38,13 +36,12 @@ namespace Circustrein
             return true;
         }
 
-
         private bool SafeToAddAnimal(Animal animal)
 
         {
             foreach (Animal animalInWagon in animalsInWagon)
             {
-                if (animalInWagon.Type == AnimalType.Carnivore && animalInWagon.Size >= animal.Size)
+                if (animalInWagon is Carnivore && animalInWagon.Size >= animal.Size)
                 {
                     return false;
                 }
@@ -70,9 +67,7 @@ namespace Circustrein
             builder.AppendLine("       ======o======        ");
             foreach (Animal animal in animalsInWagon)
             {
-                builder.AppendLine("       " + animal.Size + " " + animal.Type.ToString());
-
-
+                builder.AppendLine("       " + animal.ToString());
             }
             builder.AppendLine("       ======o======        ");
             return builder.ToString();
